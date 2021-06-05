@@ -1,0 +1,105 @@
+http://localhost:5000/api/users POST Регистрация
+headers(Content-Type, application/json)
+{
+	"name": "Alekslomyarius",
+	"email":"aleks@gmail.com",
+	"password":"123456"
+}
+
+http://localhost:5000/api/auth GET Аутентификация
+headers(x-auth-token, <token>)
+
+http://localhost:5000/api/auth POST
+headers(Content-Type, application/json)
+{
+	"email": "aleks@gmail.com",
+	"password": "123456"
+}
+
+http://localhost:5000/api/profile/me GET Информация о пользователе
+headers(x-auth-token, <token>)
+
+http://localhost:5000/api/profile POST Добавление или изменение информации о пользователе
+headers(Content-Type, application/json; x-auth-token, <token>)
+{
+	"company": "asd",
+	"status": "Developer",
+	"website": "asdasd",
+	"skills": "Pythos, JS",
+	"location": "Tambov",
+	"bio": "ASddsa",
+	"githubusername": "Alekslomyarius",
+	"youtube": "youtube"
+}
+
+http://localhost:5000/api/profile GET Информация о всех пользователях
+headers(Content-Type, application/json)
+
+http://localhost:5000/api/profile/user/:user_id GET Информация о пользователе по его ID
+headers(Content-Type, application/json)
+
+http://localhost:5000/api/profile/experience PUT
+headers(Content-Type, application/json; x-auth-token, <token>)
+{
+	"title": "asdasdfaerqweqretq qwer ",
+	"company": "asdfeqwr qwer qa faf",
+	"location": "as werqwerdf",
+	"from": "1-1-2020",
+	"current": true,
+	"description": "Awdwe qwerqwerwq  eqwrq ewq rrf"
+}
+
+http://localhost:5000/api/profile/experience/exp_id DELETE
+headers(x-auth-token, <token>)
+
+http://localhost:5000/api/profile GET Информация о всех пользователях
+headers(Content-Type, application/json)
+
+http://localhost:5000/api/profile/user/:user_id GET Информация о пользователе по его ID
+headers(Content-Type, application/json)
+
+http://localhost:5000/api/profile/education PUT
+headers(Content-Type, application/json; x-auth-token, <token>)
+{
+	"school": "asdasdfaerqweqretq qwer ",
+	"degree": "asdfeqwr qwer qa faf",
+	"fieldofstudy": "as werqwerdf",
+	"from": "1-1-2020",
+	"current": true,
+	"description": "Awdwe qwerqwerwq  eqwrq ewq rrf"
+}
+
+http://localhost:5000/api/profile/education/edu_id DELETE
+headers(x-auth-token, <token>)
+
+http://localhost:5000/api/profile/github/:username GET
+
+http://localhost:5000/api/posts POST
+headers(Content-Type, application/json; x-auth-token, <token>)
+{
+	"text": ""
+}
+
+http://localhost:5000/api/posts GET
+headers(x-auth-token, <token>)
+
+http://localhost:5000/api/posts/:id GET
+headers(Content-Type, application/json; x-auth-token, <token>)
+
+http://localhost:5000/api/posts DELETE
+headers(Content-Type, application/json; x-auth-token, <token>)
+
+http://localhost:5000/api/posts/like/:id PUT
+headers(Content-Type, application/json; x-auth-token, <token>)
+
+http://localhost:5000/api/posts/unlike/:id PUT
+headers(Content-Type, application/json; x-auth-token, <token>)
+
+http://localhost:5000/api/posts/api/comment/:id POST
+headers(Content-Type, application/json; x-auth-token, <token>)
+{
+	"text": ""
+}
+
+http://localhost:5000/api/posts/comment/:id/:comment_id DELETE
+headers(Content-Type, application/json; x-auth-token, <token>)
